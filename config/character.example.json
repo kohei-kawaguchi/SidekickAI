@@ -1,7 +1,7 @@
 {
   "name": "sidekick",
   "source": "assets/character_source.jpg",
-  "image": "assets/character.png",
+  "image": "examples/character.png",
   "backgroundThreshold": 240,
   "featherRadius": 1,
   "startupLine": "やあ。君の願いをひとつ、タスクとして引き受けに来たよ。",

@@ -31,4 +31,6 @@ App constants live in `config/sidekick.json`.
 
 Character settings live in `config/character.json`, which is git-ignored like a `.env` file. Only `config/character.example.json` is committed. Fields: `name` (tray tooltip), `source` and `image` (image paths), `backgroundThreshold` and `featherRadius` (background removal), `startupLine`, and `lines` (one bubble line per state: `idle`, `working`, `waiting`, `done`). Restart the app after editing.
 
-`assets/` is git-ignored because the image is copyrighted. Put the source image at the `source` path, then run `python scripts/remove_background.py config/character.json` to produce the `image` file.
+The example uses `examples/character.png`, an original mascot drawn in `examples/character.svg`. Re-render it with `npx electron scripts/render_svg.js examples/character.svg examples/character.png 400 440`.
+
+To use your own image, keep it in `assets/`, which is git-ignored because such images are usually copyrighted. Put the source image at the `source` path, set `image` to a path under `assets/`, then run `python scripts/remove_background.py config/character.json` to produce the `image` file.
