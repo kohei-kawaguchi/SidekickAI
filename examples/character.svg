@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#e6e9f0"/>
     </radialGradient>
     <radialGradient id="eye" cx="40%" cy="35%" r="70%">
-      <stop offset="0%" stop-color="#4a5d86"/>
-      <stop offset="100%" stop-color="#1f2a44"/>
+      <stop offset="0%" stop-color="#5a5a5e"/>
+      <stop offset="100%" stop-color="#1e1e20"/>
     </radialGradient>
   </defs>
   <g stroke="#b3b8c6" stroke-width="3" stroke-linejoin="round">
