@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="440" viewBox="0 0 400 440">
+  <defs>
+    <radialGradient id="fur" cx="42%" cy="32%" r="75%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e6e9f0"/>
+    </radialGradient>
+    <radialGradient id="eye" cx="40%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#5a5a5e"/>
+      <stop offset="100%" stop-color="#1e1e20"/>
+    </radialGradient>
+  </defs>
+  <g stroke="#b3b8c6" stroke-width="3" stroke-linejoin="round">
+    <path d="M200 70 C200 45 215 30 232 28 C228 48 218 62 200 70 Z" fill="#cfe8d8"/>
+    <ellipse cx="112" cy="102" rx="26" ry="22" fill="url(#fur)"/>
+    <ellipse cx="288" cy="102" rx="26" ry="22" fill="url(#fur)"/>
+    <ellipse cx="160" cy="398" rx="30" ry="16" fill="url(#fur)"/>
+    <ellipse cx="240" cy="398" rx="30" ry="16" fill="url(#fur)"/>
+    <path d="M200 70 C300 70 335 170 335 260 C335 350 280 395 200 395 C120 395 65 350 65 260 C65 170 100 70 200 70 Z" fill="url(#fur)"/>
+    <ellipse cx="82" cy="290" rx="18" ry="28" fill="url(#fur)" transform="rotate(20 82 290)"/>
+    <ellipse cx="318" cy="290" rx="18" ry="28" fill="url(#fur)" transform="rotate(-20 318 290)"/>
+  </g>
+  <circle cx="160" cy="215" r="20" fill="url(#eye)"/>
+  <circle cx="240" cy="215" r="20" fill="url(#eye)"/>
+  <circle cx="153" cy="207" r="5" fill="#ffffff"/>
+  <circle cx="233" cy="207" r="5" fill="#ffffff"/>
+  <path d="M190 255 L210 255" stroke="#8a8f9c" stroke-width="3" stroke-linecap="round"/>
+</svg>

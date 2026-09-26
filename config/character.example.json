@@ -1,0 +1,14 @@
+{
+  "name": "sidekick",
+  "source": "assets/character_source.jpg",
+  "image": "examples/character.png",
+  "backgroundThreshold": 240,
+  "featherRadius": 1,
+  "startupLine": "やあ。君の願いをひとつ、タスクとして引き受けに来たよ。",
+  "lines": {
+    "idle": "僕はここで待っているよ。いつでも声をかけてくれていいんだ。",
+    "working": "心配はいらないよ。効率よく処理しているところさ。",
+    "waiting": "ここから先は、君が選ぶ必要があるんだ。",
+    "done": "おめでとう。君の願いは、ちゃんと叶ったよ。"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "characterConfig": "config/character.json",
+  "window": {
+    "width": 260,
+    "height": 340,
+    "marginRight": 24,
+    "marginBottom": 48
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 47813
+  },
+  "states": [
+    "idle",
+    "working",
+    "waiting",
+    "done"
+  ],
+  "doneToIdleSeconds": 20,
+  "claudeDesktop": {
+    "pollSeconds": 2,
+    "notificationDb": "%LOCALAPPDATA%/Microsoft/Windows/Notifications/wpndatabase.db",
+    "notificationHandler": "com.squirrel.AnthropicClaude.claude",
+    "notificationTagRules": [
+      {
+        "prefix": "channel-input-",
+        "state": "waiting"
+      },
+      {
+        "prefix": "idle-",
+        "state": "waiting"
+      },
+      {
+        "prefix": "channel-thread-",
+        "state": "done"
+      },
+      {
+        "prefix": "channel-msg-",
+        "state": "done"
+      }
+    ],
+    "mainLog": "%LOCALAPPDATA%/Claude/logs/main.log",
+    "logRules": [
+      {
+        "pattern": "LocalSessions\\.sendMessage",
+        "state": "working"
+      },
+      {
+        "pattern": "\\[CCD CycleHealth\\] healthy cycle",
+        "state": "done"
+      },
+      {
+        "pattern": "\\[CCD CycleHealth\\] unhealthy cycle",
+        "state": "done"
+      }
+    ]
+  },
+  "claudeCode": {
+    "eventStates": {
+      "UserPromptSubmit": "working",
+      "PostToolUse": "working",
+      "Notification": "waiting",
+      "Stop": "done"
+    },
+    "messageMaxLength": 80,
+    "requestTimeoutMs": 1000
+  }
+}
