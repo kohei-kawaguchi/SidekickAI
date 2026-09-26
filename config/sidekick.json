@@ -1,0 +1,88 @@
+{
+  "character": {
+    "source": "assets/character_source.jpg",
+    "image": "assets/character.png",
+    "backgroundThreshold": 240,
+    "featherRadius": 1
+  },
+  "window": {
+    "width": 260,
+    "height": 340,
+    "marginRight": 24,
+    "marginBottom": 48
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 47813
+  },
+  "states": {
+    "idle": {
+      "line": "何か困ったことがあったら、僕を呼んでよ。"
+    },
+    "working": {
+      "line": "わけがわからないよ…でも処理は進めているよ。"
+    },
+    "waiting": {
+      "line": "君の入力が必要なんだ。契約の続きをしようよ。"
+    },
+    "done": {
+      "line": "おめでとう、タスクは完了したよ！"
+    }
+  },
+  "startupLine": "僕と契約して、タスクを実行してよ！",
+  "doneToIdleSeconds": 20,
+  "claudeDesktop": {
+    "pollSeconds": 2,
+    "notificationDb": "%LOCALAPPDATA%/Microsoft/Windows/Notifications/wpndatabase.db",
+    "notificationHandler": "com.squirrel.AnthropicClaude.claude",
+    "notificationTagRules": [
+      {
+        "prefix": "channel-input-",
+        "state": "waiting"
+      },
+      {
+        "prefix": "idle-",
+        "state": "waiting"
+      },
+      {
+        "prefix": "channel-thread-",
+        "state": "done"
+      },
+      {
+        "prefix": "channel-msg-",
+        "state": "done"
+      }
+    ],
+    "mainLog": "%LOCALAPPDATA%/Claude/logs/main.log",
+    "logRules": [
+      {
+        "pattern": "LocalSessions\\.sendMessage",
+        "state": "working"
+      },
+      {
+        "pattern": "\\[CCD CycleHealth\\] healthy cycle",
+        "state": "done"
+      },
+      {
+        "pattern": "\\[CCD CycleHealth\\] unhealthy cycle",
+        "state": "done"
+      }
+    ]
+  },
+  "cursor": {
+    "eventStates": {
+      "beforeSubmitPrompt": "working",
+      "postToolUse": "working",
+      "afterAgentThought": "working",
+      "afterAgentResponse": "working",
+      "stop": "done"
+    },
+    "eventResponses": {
+      "beforeSubmitPrompt": {
+        "continue": true
+      }
+    },
+    "messageMaxLength": 80,
+    "requestTimeoutMs": 1000
+  }
+}
