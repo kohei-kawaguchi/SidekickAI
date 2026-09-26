@@ -67,8 +67,18 @@
       "beforeSubmitPrompt": {
         "continue": true
       }
-    },
+    }
+  },
+  "hooks": {
     "messageMaxLength": 80,
     "requestTimeoutMs": 1000
+  },
+  "claudeCode": {
+    "eventStates": {
+      "UserPromptSubmit": "working",
+      "PostToolUse": "working",
+      "Notification": "waiting",
+      "Stop": "done"
+    }
   }
 }

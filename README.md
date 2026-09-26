@@ -23,6 +23,9 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:47813/event -ContentType ap
 ## Adapters
 
 - Cursor: `adapters/cursor/cursor-hook.js`, registered in `~/.cursor/hooks.json` for `beforeSubmitPrompt`, `postToolUse`, `afterAgentThought`, `afterAgentResponse`, `stop`.
+- Claude Code (CLI, Remote Control sessions, and the desktop Code tab): `adapters/claude-code/claude-code-hook.js`, registered in `~/.claude/settings.json` hooks for `UserPromptSubmit`, `PostToolUse`, `Notification`, `Stop`. The bubble shows the session's folder name.
+
+Both hook scripts share `adapters/hook-client.js`.
 - Claude desktop: `src/adapters/claudeDesktop.js` polls the Windows notification store (read-only) for Claude toasts and tails `%LOCALAPPDATA%/Claude/logs/main.log`. Both are undocumented and may change with app updates.
 
 App constants live in `config/sidekick.json`.
