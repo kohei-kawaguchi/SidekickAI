@@ -1,10 +1,5 @@
 {
-  "character": {
-    "source": "assets/character_source.jpg",
-    "image": "assets/character.png",
-    "backgroundThreshold": 240,
-    "featherRadius": 1
-  },
+  "characterConfig": "config/character.json",
   "window": {
     "width": 260,
     "height": 340,
@@ -15,21 +10,12 @@
     "host": "127.0.0.1",
     "port": 47813
   },
-  "states": {
-    "idle": {
-      "line": "何か困ったことがあったら、僕を呼んでよ。"
-    },
-    "working": {
-      "line": "わけがわからないよ…でも処理は進めているよ。"
-    },
-    "waiting": {
-      "line": "君の入力が必要なんだ。契約の続きをしようよ。"
-    },
-    "done": {
-      "line": "おめでとう、タスクは完了したよ！"
-    }
-  },
-  "startupLine": "僕と契約して、タスクを実行してよ！",
+  "states": [
+    "idle",
+    "working",
+    "waiting",
+    "done"
+  ],
   "doneToIdleSeconds": 20,
   "claudeDesktop": {
     "pollSeconds": 2,

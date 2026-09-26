@@ -43,5 +43,5 @@ def remove_background(source, target, threshold, feather_radius):
 
 
 if __name__ == "__main__":
-    config = json.load(open(sys.argv[1], encoding="utf-8"))["character"]
+    config = json.load(open(sys.argv[1], encoding="utf-8"))
     remove_background(config["source"], config["image"], config["backgroundThreshold"], config["featherRadius"])

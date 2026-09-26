@@ -6,6 +6,7 @@ sidekick: an always-on-top desktop mascot that reacts to AI agent apps.
 
 ```
 npm install
+cp config/character.example.json config/character.json
 npm start
 ```
 
@@ -24,8 +25,10 @@ Invoke-RestMethod -Method Post -Uri http://127.0.0.1:47813/event -ContentType ap
 - Cursor: `adapters/cursor/cursor-hook.js`, registered in `~/.cursor/hooks.json` for `beforeSubmitPrompt`, `postToolUse`, `afterAgentThought`, `afterAgentResponse`, `stop`.
 - Claude desktop: `src/adapters/claudeDesktop.js` polls the Windows notification store (read-only) for Claude toasts and tails `%LOCALAPPDATA%/Claude/logs/main.log`. Both are undocumented and may change with app updates.
 
-All constants live in `config/sidekick.json`.
+App constants live in `config/sidekick.json`.
 
-## Character image
+## Character
 
-`assets/` is git-ignored because the image is copyrighted. Put the source image at `assets/character_source.jpg`, then run `python scripts/remove_background.py config/sidekick.json` to produce `assets/character.png`.
+Character settings live in `config/character.json`, which is git-ignored like a `.env` file. Only `config/character.example.json` is committed. Fields: `name` (tray tooltip), `source` and `image` (image paths), `backgroundThreshold` and `featherRadius` (background removal), `startupLine`, and `lines` (one bubble line per state: `idle`, `working`, `waiting`, `done`). Restart the app after editing.
+
+`assets/` is git-ignored because the image is copyrighted. Put the source image at the `source` path, then run `python scripts/remove_background.py config/character.json` to produce the `image` file.
