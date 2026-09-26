@@ -2,12 +2,13 @@
   "name": "sidekick",
   "version": "0.1.0",
   "private": true,
-  "description": "Always-on-top desktop mascot that reacts to AI agent apps",
+  "description": "Always-on-top desktop mascot that reacts to Claude",
   "main": "src/main.js",
   "scripts": {
     "start": "electron ."
   },
   "devDependencies": {
     "electron": "^44.4.5"
-  }
+  },
+  "license": "MIT"
 }
