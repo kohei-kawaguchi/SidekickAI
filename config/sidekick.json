@@ -55,30 +55,14 @@
       }
     ]
   },
-  "cursor": {
-    "eventStates": {
-      "beforeSubmitPrompt": "working",
-      "postToolUse": "working",
-      "afterAgentThought": "working",
-      "afterAgentResponse": "working",
-      "stop": "done"
-    },
-    "eventResponses": {
-      "beforeSubmitPrompt": {
-        "continue": true
-      }
-    }
-  },
-  "hooks": {
-    "messageMaxLength": 80,
-    "requestTimeoutMs": 1000
-  },
   "claudeCode": {
     "eventStates": {
       "UserPromptSubmit": "working",
       "PostToolUse": "working",
       "Notification": "waiting",
       "Stop": "done"
-    }
+    },
+    "messageMaxLength": 80,
+    "requestTimeoutMs": 1000
   }
 }
